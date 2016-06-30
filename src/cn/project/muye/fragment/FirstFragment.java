@@ -1,8 +1,7 @@
-package cn.project.muye;
+package cn.project.muye.fragment;
 
 
 import android.content.Intent;
-import android.nfc.Tag;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
@@ -18,6 +17,8 @@ import com.android.volley.Response;
 
 import java.util.ArrayList;
 
+import cn.project.muye.I;
+import cn.project.muye.R;
 import cn.project.muye.activity.LoginActivity;
 import cn.project.muye.activity.MuYeMainActivity;
 import cn.project.muye.adapter.GoodsAdapter;

@@ -1,6 +1,7 @@
 package cn.project.muye.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +16,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
+import cn.project.muye.D;
 import cn.project.muye.I;
 import cn.project.muye.R;
 import cn.project.muye.bean.NewGoodBean;
@@ -146,6 +148,7 @@ public class GoodsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         if (position == getItemCount() - 1) {
             mFooterViewHolder = (FooterViewHolder) holder;
+            mFooterViewHolder.mtvFootertext.setText(footerText);
             return;
         }
         GoodItemViewHolder holder1 = (GoodItemViewHolder)holder;
@@ -153,7 +156,7 @@ public class GoodsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
         holder1.mtvGoodName.setText(good.getGoodsName());
         holder1.mtvPrice.setText(good.getShopPrice());
         ImageUtils.setNewGoodThumb(good.getGoodsThumb(),holder1.mAvatar);
-//        holder1.ll_good.setOnClickListener(new View.OnClickListener() {
+//        holder1.rl_good.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
 //                mContext.startActivity(new Intent(mContext, GoodDetailActivity.class).putExtra(D.NewGood.KEY_GOODS_ID,good.getGoodsId()));

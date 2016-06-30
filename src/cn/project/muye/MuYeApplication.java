@@ -18,10 +18,14 @@ import android.content.Context;
 
 import com.easemob.EMCallBack;
 
+import java.util.ArrayList;
+
+import cn.project.muye.bean.CategoryChildBean;
+import cn.project.muye.bean.CategoryGroupBean;
 import cn.project.muye.data.RequestManager;
 
 public class MuYeApplication extends Application {
-	public static String SERVER_ROOT = "http://192.168.1.44:8080/FuLiCenterServer/Server";
+	public static String SERVER_ROOT = "http://192.168.6.12:8080/FuLiCenterServer/Server";
 	public static Context applicationContext;
 	private static MuYeApplication instance;
 	// login user name
@@ -32,6 +36,25 @@ public class MuYeApplication extends Application {
 	 */
 	public static String currentUserNick = "";
 	public static DemoHXSDKHelper hxSDKHelper = new DemoHXSDKHelper();
+
+	ArrayList<CategoryGroupBean> categoryList = new ArrayList<CategoryGroupBean>();
+	ArrayList<CategoryChildBean> categoryChildList = new ArrayList<CategoryChildBean>();
+
+	public ArrayList<CategoryGroupBean> getCategoryList() {
+		return categoryList;
+	}
+
+	public void setCategoryList(ArrayList<CategoryGroupBean> categoryList) {
+		this.categoryList = categoryList;
+	}
+
+	public ArrayList<CategoryChildBean> getCategoryChildList() {
+		return categoryChildList;
+	}
+
+	public void setCategoryChildList(ArrayList<CategoryChildBean> categoryChildList) {
+		this.categoryChildList = categoryChildList;
+	}
 
 	@Override
 	public void onCreate() {
@@ -86,7 +109,6 @@ public class MuYeApplication extends Application {
 	/**
 	 * 设置用户名
 	 *
-	 * @param user
 	 */
 	public void setUserName(String username) {
 	    hxSDKHelper.setHXId(username);

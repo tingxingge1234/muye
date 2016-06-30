@@ -54,4 +54,9 @@ public class ImageUtils {
 		nivThumb.setErrorImageResId(R.drawable.nopic);
 		nivThumb.setDefaultImageResId(R.drawable.nopic);
 	}
+	public static void setThumb(String url, NetworkImageView imageView) {
+		imageView.setDefaultImageResId(R.drawable.nopic);
+		imageView.setErrorImageResId(R.drawable.nopic);
+		imageView.setImageUrl(url,RequestManager.getImageLoader());
+	}
 }

@@ -22,7 +22,7 @@
                 android:button="@null"
                 android:drawableTop="@drawable/first_normal"
                 android:text="首页"
-                android:textColor="@color/main_botton_text_color"
+                android:textColor="#000"
                 android:gravity="center"
                 />
             <RadioButton
@@ -31,7 +31,7 @@
                 android:button="@null"
                 android:drawableTop="@drawable/buy_normal"
                 android:text="分类"
-                android:textColor="@color/main_botton_text_color"
+                android:textColor="#000"
                 android:gravity="center"
                 />
             <RadioButton
@@ -40,7 +40,7 @@
                 android:button="@null"
                 android:drawableTop="@drawable/shops_normal"
                 android:text="商铺"
-                android:textColor="@color/main_botton_text_color"
+                android:textColor="#000"
                 android:gravity="center"
                 />
             <RelativeLayout
@@ -51,7 +51,7 @@
                     android:button="@null"
                     android:drawableTop="@drawable/search_normal"
                     android:text="搜索"
-                    android:textColor="@color/main_botton_text_color"
+                    android:textColor="#000"
                     android:gravity="center"
                     android:checked="false"
                     />
@@ -63,7 +63,7 @@
                 android:button="@null"
                 android:drawableTop="@drawable/menu_item_category_normal"
                 android:text="更多"
-                android:textColor="@color/main_botton_text_color"
+                android:textColor="#000"
                 android:gravity="center"
                 />
         </RadioGroup>
