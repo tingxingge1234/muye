@@ -19,6 +19,7 @@ import java.util.Comparator;
 import cn.project.muye.D;
 import cn.project.muye.I;
 import cn.project.muye.R;
+import cn.project.muye.activity.GoodsDetailsActivity;
 import cn.project.muye.bean.NewGoodBean;
 import cn.project.muye.utils.ImageUtils;
 import cn.project.muye.view.FooterViewHolder;
@@ -36,6 +37,7 @@ public class GoodsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
     boolean isMore;
     int sortBy;
     FooterViewHolder mFooterViewHolder;
+
     public GoodsAdapter(Context mContext, ArrayList<NewGoodBean> mNewGoodList, int sortBy) {
         this.mContext = mContext;
         this.sortBy = sortBy;
@@ -155,13 +157,16 @@ public class GoodsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
         final NewGoodBean good = mNewGoodList.get(position);
         holder1.mtvGoodName.setText(good.getGoodsName());
         holder1.mtvPrice.setText(good.getShopPrice());
+        int goodsId = good.getGoodsId();
         ImageUtils.setNewGoodThumb(good.getGoodsThumb(),holder1.mAvatar);
-//        holder1.rl_good.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                mContext.startActivity(new Intent(mContext, GoodDetailActivity.class).putExtra(D.NewGood.KEY_GOODS_ID,good.getGoodsId()));
-//            }
-//        });
+        holder1.rl_good.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mContext.startActivity(new Intent(mContext, GoodsDetailsActivity.class)
+                        .putExtra(D.NewGood.KEY_GOODS_ID,good.getGoodsId()));
+            }
+        });
+
     }
 
     @Override

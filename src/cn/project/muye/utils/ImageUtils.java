@@ -13,15 +13,20 @@
  */
 package cn.project.muye.utils;
 
+import android.nfc.Tag;
+import android.util.Log;
+
 import com.android.volley.toolbox.NetworkImageView;
 import com.easemob.util.EMLog;
 import com.easemob.util.PathUtil;
 
 import cn.project.muye.I;
+import cn.project.muye.MuYeApplication;
 import cn.project.muye.R;
 import cn.project.muye.data.RequestManager;
 
 public class ImageUtils {
+	public static final String TAG = ImageUtils.class.getName();
 //	public static String getThumbnailImagePath(String imagePath) {
 //		String path = imagePath.substring(0, imagePath.lastIndexOf("/") + 1);
 //		path += "th" + imagePath.substring(imagePath.lastIndexOf("/") + 1, imagePath.length());
@@ -58,5 +63,12 @@ public class ImageUtils {
 		imageView.setDefaultImageResId(R.drawable.nopic);
 		imageView.setErrorImageResId(R.drawable.nopic);
 		imageView.setImageUrl(url,RequestManager.getImageLoader());
+	}
+	public static void setGoodDetailThumb(String colorImg, NetworkImageView imageView) {
+		String url = MuYeApplication.SERVER_ROOT
+				+"?"+I.KEY_REQUEST+"="+I.REQUEST_DOWNLOAD_COLOR_IMG
+				+"&"+I.Color.COLOR_IMG+"="+colorImg;
+		Log.e(TAG, "url=" + url);
+		setThumb(url, imageView);
 	}
 }
